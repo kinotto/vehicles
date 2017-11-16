@@ -11,13 +11,15 @@
             "restart": true,
             "args": [],
             "cwd": "${workspaceRoot}",
+            "preLaunchTask": "build",
             "runtimeExecutable": null,
             "runtimeArgs": ["--nolazy"],
             "env": {
               "NODE_ENV": "development"
-            },    
+            },
             "sourceMaps": true,
-            "outFiles": ["${workspaceFolder}/build/**/*.js"]
+            "outFiles": ["${workspaceFolder}/build/**/*.js"],
+            "protocol": "inspector"
           }
      ]
 }

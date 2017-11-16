@@ -1,0 +1,11 @@
+{
+    "server": {
+        "PORT": 9002
+    },
+    "db": {
+        "host": "mongodb://heroku_hs0530nq:u4kdmv7ge8anh700uvetdrhi63@ds111476.mlab.com:11476/heroku_hs0530nq"
+    },
+    "redis": {
+        "host": "redis://h:p02cd1f6a71d43790ac825120354ace5916e583257a78c4847ef459a4beb0c4b0@ec2-34-236-115-251.compute-1.amazonaws.com:18329"
+    }
+}
