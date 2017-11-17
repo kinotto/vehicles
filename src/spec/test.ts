@@ -13,7 +13,7 @@ import Server from '../server';
 //const app = express();
 declare var Promise: any;
 
-describe('vehicle specs', () => {
+describe('data test', () => {
     let db,
         sandbox: sinon.SinonSandbox;
 
@@ -35,10 +35,9 @@ describe('vehicle specs', () => {
     it('should connect to redis ', (done) => {
 
         //QUESTO TEST PASSA MA IMPEDISCE A YARN TEST DI TERMINARE
-        let stub:any = sinon.stub(Redis, 'getAll').callsFake(() => {
-            return Promise.resolve('ciao');
-
-        });
+        let obj = {pippo: () => 'bau'};
+        //let stub:any = sinon.stub(Redis, 'getAll').resolves('ciao');
+        let stub: any = sinon.stub(obj, 'pippo').callsFake(() => Promise.resolve('ciao'));
         //console.log(stub());
         stub().then((resp: any) => {
             expect(resp).to.equal('ciao');
@@ -68,7 +67,7 @@ describe('request url tests', (() => {
         connection = Mongo.connect();
         app = Server.getInstance();
         app.use('/vehicles', require('../routes/vehiclesRegistration'));
-        connection.once('open', done());
+        connection.once('open', () => done());
     })
 
     it('should return the list of users /archive', (done) => {
