@@ -16,8 +16,6 @@ server.use((err: Error, req: express.Request, res: express.Response, next: expre
         statusCode: 500
     })
 })
-server.listen(process.env.port || config.server.PORT, 
-    console.log.bind(console,  `server listening on port ${process.env.port || config.server.PORT}`));
+server.listen(process.env.PORT || config.server.PORT, 
+    console.log.bind(console,  `server listening on port ${process.env.PORT || config.server.PORT}`));
 
-
-require('./observable.ts');
